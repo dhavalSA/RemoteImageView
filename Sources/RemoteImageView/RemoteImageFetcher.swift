@@ -38,6 +38,10 @@ public class RemoteImageFetcher: ObservableObject {
     public func purge() {
       imageData = Data()
     }
+    public init(from url: URL) {
+      self.url = url
+    }
+
   // 1
   public func fetch() {
     URLSession.shared.dataTask(with: url) { (data, _, _) in
